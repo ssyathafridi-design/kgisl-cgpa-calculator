@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KGiSL Institute of Technology | CGPA Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <main class="container">
+        <header class="hero">
+            <div class="hero-top">
+                <div class="college-brand">
+                    <div class="college-mark">K</div>
+
+                    <div>
+                        <p class="college-label">KGiSL Educational Institutions</p>
+                        <h1>KGiSL Institute of Technology</h1>
+                        <p class="college-location">Coimbatore, Tamil Nadu</p>
+                    </div>
+                </div>
+
+                <span class="autonomous-badge">Autonomous Institution</span>
+            </div>
+
+            <div class="hero-content">
+                <div>
+                    <p class="eyebrow">STUDENT ACADEMIC TOOL</p>
+                    <h2>CGPA Calculator</h2>
+                    <p class="hero-description">
+                        Add your subject grades and credits to Calculate My CGPA and overall CGPA.
+                    </p>
+                </div>
+
+                <div class="hero-icon">⌁</div>
+            </div>
+        </header>
+
+        <section class="steps">
+            <div class="step active">
+                <span>1</span>
+                <p>Enter Subjects</p>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <span>2</span>
+                <p>Calculate My CGPA</p>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <span>3</span>
+                <p>Save Semester</p>
+            </div>
+        </section>
+        <section class="steps">
+            ...
+        </section>
+
+        <!-- Screenshot Upload Section starts -->
+        <section class="card upload-card">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow purple-text">QUICK CALCULATION</p>
+                    <h3>Upload your result screenshot</h3>
+                    <p>
+                        Upload a clear result image. We will help you fill the subject details.
+                    </p>
+                </div>
+
+                <span class="info-pill">Optional</span>
+            </div>
+
+            <div class="upload-grid">
+                <label for="resultImage" class="upload-zone" id="uploadZone">
+                    <input type="file" id="resultImage" accept="image/png, image/jpeg, image/jpg" hidden />
+
+                    <span class="upload-symbol">↑</span>
+                    <strong>Choose result screenshot</strong>
+                    <span>PNG, JPG or JPEG · Maximum 5 MB</span>
+                    <small>You can also drag and drop an image here.</small>
+                </label>
+
+                <div class="upload-tips">
+                    <p class="tip-title">For best results</p>
+                    <p>✓ Upload a clear, uncropped screenshot</p>
+                    <p>✓ Keep Credit, Grade and G.P. columns visible</p>
+                    <p>✓ Make sure all subject rows are included</p>
+                </div>
+            </div>
+
+            <div class="preview-area hidden" id="previewArea">
+                <div class="preview-top">
+                    <div>
+                        <p class="eyebrow purple-text">IMAGE READY</p>
+                        <h4 id="imageName">result-screenshot.jpg</h4>
+                    </div>
+
+                    <button type="button" class="delete-btn" id="removeImageBtn">
+                        Remove image
+                    </button>
+                </div>
+
+                <img id="imagePreview" alt="Uploaded result screenshot preview" />
+
+                <p class="preview-note">
+                    Your image is only selected in this browser. Review it before scanning.
+                </p>
+                <div class="scan-actions">
+                    <button type="button" class="primary" id="scanResultBtn">
+                        Read My Result <span>→</span>
+                    </button>
+
+                    <p id="scanStatus" class="scan-status">
+                        Review the screenshot, then tap “Read My Result”.
+                    </p>
+                </div>
+
+                <div id="ocrTextBox" class="ocr-text-box hidden">
+                    <p class="eyebrow purple-text">TEXT FOUND IN SCREENSHOT</p>
+                    <p class="ocr-help">
+                        Please check this text. Next we will automatically fill the subject table.
+                    </p>
+                    <pre id="ocrText"></pre>
+                </div>
+                <button type="button" class="secondary hidden" id="fillSubjectsBtn">
+                    Fill Detected Subjects in Calculator
+                </button>
+            </div>
+        </section>
+        <!-- Screenshot Upload Section ends -->
+        <section class="card calculator-card">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow purple-text">SEMESTER DETAILS</p>
+                    <h3>Enter your course results</h3>
+                    <p>Only courses with credits are included in SGPA/CGPA calculation.</p>
+                </div>
+
+                <span class="info-pill">Grade point system</span>
+            </div>
+
+            <div class="top-row">
+                <div class="field-group">
+                    <label for="semesterName">Select Semester</label>
+                    <select id="semesterName">
+                        <option value="Semester 1">Semester 1</option>
+                        <option value="Semester 2">Semester 2</option>
+                        <option value="Semester 3">Semester 3</option>
+                        <option value="Semester 4">Semester 4</option>
+                        <option value="Semester 5">Semester 5</option>
+                        <option value="Semester 6">Semester 6</option>
+                        <option value="Semester 7">Semester 7</option>
+                        <option value="Semester 8">Semester 8</option>
+                    </select>
+                </div>
+
+                <div class="field-group">
+                    <label for="regulation">Regulation</label>
+                    <select id="regulation">
+                        <option value="R2024">R2024</option>
+                        <option value="R2021">R2021</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-header">
+                <div>
+                    <h4>Course Details</h4>
+                    <p>Add all credit-bearing subjects from your result.</p>
+                </div>
+
+                <button type="button" class="add-button" id="addSubjectBtn">
+                    <span>＋</span> Add Subject
+                </button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Subject Name</th>
+                            <th>Credit</th>
+                            <th>Grade</th>
+                            <th>Grade Point</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="subjectBody"></tbody>
+                </table>
+            </div>
+
+            <div class="actions">
+                <button type="button" class="secondary reset-btn" id="resetCalculatorBtn">
+                    Start New Calculation
+                </button>
+
+                <button type="button" class="primary" id="calculateBtn">
+                    Calculate My CGPA <span>→</span>
+                </button>
+            </div>
+
+            <p id="message" class="message"></p>
+
+            <section id="resultBox" class="result hidden">
+                <div class="result-item">
+                    <span>Total Credits</span>
+                    <strong id="totalCredits">0</strong>
+                </div>
+
+                <div class="result-item">
+                    <span>Weighted Points</span>
+                    <strong id="weightedPoints">0</strong>
+                </div>
+
+                <div class="result-item final-result">
+                    <span>Your SGPA</span>
+                    <strong id="sgpaValue">0.00</strong>
+                </div>
+                <button type="button" class="download-pdf-btn" id="downloadPdfBtn">
+                    Download Result PDF
+                </button>
+            </section>
+        </section>
+
+        <section class="card history-card">
+            <div class="history-title">
+                <div>
+                    <p class="eyebrow purple-text">ACADEMIC PROGRESS</p>
+                    <h3>Semester History</h3>
+                    <p>Save every completed semester to calculate your overall CGPA.</p>
+                </div>
+
+                <button type="button" class="save-button" id="saveSemesterBtn">
+                    Save Semester
+                </button>
+            </div>
+
+            <div id="historyList" class="history-list">
+                <div class="empty-history">
+                    <span class="empty-icon">◌</span>
+                    <p>No semester saved yet.</p>
+                    <small>Calculate and save your first semester to begin.</small>
+                </div>
+            </div>
+
+            <section id="cgpaBox" class="cgpa-box hidden">
+                <div>
+                    <span class="eyebrow light-text">CUMULATIVE PERFORMANCE</span>
+                    <p>Overall CGPA</p>
+                </div>
+
+                <strong id="cgpaValue">0.00</strong>
+            </section>
+        </section>
+
+        <footer>
+            <p>For academic reference only. Verify final results with the official college portal.</p>
+            <p>Made for KiTE Students</p>
+        </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.1/jspdf.umd.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
